@@ -4,6 +4,7 @@ from flask import request
 import sqlite3
 
 app = Flask(__name__, static_url_path='/Static')
+app.secret_key = "social"
 
 
 @app.route('/')
@@ -13,17 +14,22 @@ def homepage():
 
 @app.route('/Verify', methods=["Get", "Post"])
 def verifyuser():
-    email = request.form["email"]
-    password = request.form["pass"]
-    con = sqlite3.connect("socialavey.db")
-    cur = con.cursor()
-    sql = "select * from SignUp where email=?"
-    cur.execute(sql, (email,))
-    result = cur.fetchall()
-    if result[0][3] == email and result[0][7] == password:
-        return render_template('Foryou.html')
+    if request.method == "POST":
+        email = request.form["email"]
+        x = email
+        password = request.form["pass"]
+        con = sqlite3.connect("socialavey.db")
+        cur = con.cursor()
+        sql = "select * from SignUp where email=?"
+        cur.execute(sql, (x,))
+        result = cur.fetchall()
+        if result[0][3] == email and result[0][7] == password:
+            session['email'] = request.form['email']
+            return "Login success"
+        else:
+            return "Can't Login"
     else:
-        return "Can't Login"
+        return "This will not work"
 
 
 
@@ -46,7 +52,8 @@ def adddetails():
             address = request.form["addr"]
             password = request.form["pass"]
             cnfpassword = request.form["cnfpass"]
-            gender = request.form["gender"]
+            gender = request.form.get("gender")
+
 
             t = (fname, lname, uname, email, phone, dob, address, password, cnfpassword, gender)
             with sqlite3.connect("socialavey.db") as con:
@@ -62,6 +69,7 @@ def adddetails():
         finally:
             con.close()
             return render_template("Welcome.html", msg=msg)
+
 
 
 if __name__ == '__main__':
