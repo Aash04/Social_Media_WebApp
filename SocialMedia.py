@@ -46,7 +46,7 @@ def adddetails():
             address = request.form["addr"]
             password = request.form["pass"]
             cnfpassword = request.form["cnfpass"]
-            gender = request.form["gender"]
+            gender = request.form.get("gender")
 
             t = (fname, lname, uname, email, phone, dob, address, password, cnfpassword, gender)
             with sqlite3.connect("socialavey.db") as con:
