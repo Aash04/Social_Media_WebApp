@@ -33,9 +33,18 @@ def verifyuser():
 
 
 
-@app.route('/signup', methods=["Get"])
+@app.route('/signup', methods=["Get" , "Post"])
 def signupPage():
     return render_template('signup.html')
+
+@app.route('/about', methods=["Get"])
+def aboutPage():
+    return render_template('about.html')
+
+@app.route('/contact', methods=["Get"])
+def contactPage():
+    return render_template('contact.html')
+
 
 
 @app.route('/AddUserdetails', methods=["Post"])
