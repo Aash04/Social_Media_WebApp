@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <style>
     *{
     margin: 0;
@@ -32,8 +33,8 @@ nav{
     z-index: 100;
 }
 .logo{
-    width: 160px;
-    margin-right: 45px;
+    width: 150px;
+    margin-right: 40px;
 }
 .nav-left, .nav-right{
     display: flex;
@@ -57,7 +58,7 @@ nav{
 }
 .search-box{
     background: #efefef;
-    width: 350px;
+    width: 450px;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -73,198 +74,16 @@ nav{
     outline: none;
     border: 0;
 }
-.online{
-    position: relative;
-}
-.online::after{
-    content: '';
-    width: 7px;
-    height: 7px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    background: #41db51;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
+
 .container{
     display: flex;
      justify-content: space-between;
     padding: 13px 5%;
  }
-.left-sidebar{
-    flex-basis: 25%;
-     position: sticky;
-    top: 70px;
-    align-self: flex-start;
-}
-.right-sidebar{
-    flex-basis: 25%;
-    position: sticky;
-    top: 70px;
-    align-self: flex-start;
-    background: var(--bg-color);
-    padding: 20px;
-    border-radius: 4px;
-    color: #626262;
-}
-.main-content{
-    flex-basis: 47%;
-}
-.imp-links a, .shortcut-links a{
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-    color: #626262;
-    width: fit-content;
-}
-.imp-links a img{
-    width: 25px;
-    margin-right: 15px;
-}
-.imp-links a:last-child{
-    color: #50515e;
-}
-.imp-links{
-    border-bottom: 1px solid #ccc;
-}
-.shortcut-links a img{
-    width: 40px;
-    border-radius: 4px;
-    margin-right: 15px;
-}
-.shortcut-links p{
-    margin: 25px 0;
-    color: #626262;
-    font-weight: 500;
-}
-.sidebar-title{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 18px;
-}
-.right-sidebar h4{
-    font-weight: 600;
-    font-size: 16px;
-}
-.sidebar-title a{
-    text-decoration: none;
-    color: #64686d;
-    font-size: 12px;
-}
-.event{
-    display: flex;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-.left-event{
-    border-radius: 10px;
-    height: 65px;
-    width: 65px;
-    margin-right: 15px;
-    padding-top: 10px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.event p{
-    font-size: 12px;
-}
-.event a{
-    font-size: 12px;
-    text-decoration: none;
-    color: #1876f2;
-}
-.left-event span{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #1876f2;
-    color: #fff;
-    font-size: 10px;
-    padding: 4px 0;
-}
-.sidebar-ads{
-    width: 100%;
-    margin-bottom: 20px;
-     border-radius: 4px;
-}
-.online-list{
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.online-list .online img{
-    width: 40px;
-    border-radius: 50%;
-}
-.online-list .online{
-    width: 40px;
-    border-radius: 50%;
-    margin-right: 15px;|
-}
-.online-list .online::after{
-    top: unset;
-    bottom: 5px;
-}
-.story-gallery{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-.story{
-    flex-basis: 18%;
-    padding-top: 32%;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    border-radius: 10px;
-}
-.story img{
-    position: absolute;
-    width: 45px;
-    border-radius: 50%;
-    top: 10px;
-    left: 10px;
-    border: 5px solid #1876f2;
-}
-.story p{
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    font-size: 14px;
-}
-.story1{
-    background-image: linear-grandient(transparent, rgba(0,0,0,0.5)),url(images/status-1.png);
-}
-.story2{
-    background-image: linear-grandient(transparent, rgba(0,0,0,0.5)),url(images/status-2.png);
-}
-.story3{
-    background-image: linear-grandient(transparent, rgba(0,0,0,0.5)),url(images/status-3.png);
-}
-.story4{
-    background-image: linear-grandient(transparent, rgba(0,0,0,0.5)),url(images/status-4.png);
-}
-.story5{
-    background-image: linear-grandient(transparent, rgba(0,0,0,0.5)),url(images/status-5.png);
-}
-.story.story1 img{
-    top: unset;
-    left: 50%;
-    bottom: 40px;
-    transform: translateX(-50%);
-    border: 0;
-    width: 35px;
-}
+
+
 .write-post-container{
-    width: 100%;
+    width:100%;
     background: var(--bg-color);
     border-radius: 6px;
     padding: 20px;
@@ -279,107 +98,8 @@ nav{
     border-radius: 50%;
     margin-right: 10px;
 }
-.user-profile p{
-    margin-bottom: -5px;
-    font-weight: 500;
-    color: #626262;
-}
-.user-profile small{
-    font-size: 12px;
-}
-.post-input-container{
-    padding-left: 55px;
-    padding-top: 20px;
-}
-.post-input-container textarea{
-    width: 100%;
-    border: 0;
-    outline: 0;
-    border-bottom: 1px solid #ccc;
-    background: transparent;
-    resize: none;
-}
-.add-post-links{
-    display: flex;
-    margin-top: 10px;
-}
-.add-post-links a{
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: #626262;
-    margin-right: 30px;
-    font-size: 13px;
-}
-.add-post-links a img{
-    width: 20px;
-    margin-right: 10px;
-}
-.post-container{
-    width: 100%;
-    background: var(--bg-color);
-    border-radius: 6px;
-    padding: 20px;
-    color: #626262;
-    margin: 20px 0;
-}
-.user-profile span{
-    font-size: 13px;
-    color: #9a9a9a;
-}
-.post-text{
-    color: #9a9a9a;
-    margin: 15px 0;
-    font-size: 15px;
-}
-.post-text span{
-    color: #626262;
-    font-weight: 500;
-}
-.post-text a{
-    color: #1876f2;
-    text-decoration: none;
-}
-.post-img{
-    width: 100%;
-    border-radius: 4px;
-    margin-bottom: 5px;
-}
-.post-row{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.activity-icons div img{
-    width: 18px;
-    margin-right: 10px;
-}
-.activity-icons div{
-    display: inline-flex;
-    align-items: center;
-    margin-right: 30px;
-}
-.post-profile-icon{
-    display: flex;
-    align-items: center;
-}
-.post-profile-icon img{
-    width: 20px;
-    border-radius: 50%;
-    margin-right: 5px;
-}
 .post-row a{
     color: #9a9a9a;
-}
-.load-more-btn{
-    display: block;
-    margin: auto;
-    cursor: pointer;
-    padding: 5px 10px;
-    border: 1px solid #9a9a9a;
-    color: #626262;
-    background: transparent;
-    border-radius: 4px;
 }
 .footer{
     text-align: center;
@@ -400,64 +120,29 @@ nav{
     max-height: 0;
     transition: max-height 0.3s;
 }
-.settings-menu-height{
-max-height: 450px;
+input{
+    display: inline;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
 }
-.user-profile a{
-    font-size: 12px;
-    color: #1876f2;
-    text-decoration: none;
-}
-.settings-menu-inner{
-    padding: 20px;
-}
-.settings-menu hr{
-    border: 0;
-    height: 1px;
-    background: #9a9a9a;
-    margin: 15px 0;
-}
-.settings-links{
-    display: flex;
-    align-items: center;
-    margin: 15px 0;
-}
-.settings-links .settings-icon{
-    width: 38px;
-    margin-right: 10px;
-    border-radius: 50%;
-}
-.settings-links a{
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: space-between;
-    text-decoration: none;
-    color: #626262;
-}
-#dark-btn{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: #ccc;
-    width: 45px;
-    border-radius: 15px;
-    padding: 2px 3px;
+
+button{
+    margin-top: 0px;
+    width: 15%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 200;
+    border-radius: 5px;
     cursor: pointer;
-    display: flex;
-    transition: padding-left 0.5s, background 0.5s;
-}
-#dark-btn span{
-    width: 18px;
-    height: 18px;
-    background: #fff;
-    border-radius: 50%;
-    display: inline-block;
-}
-#dark-btn.dark-btn-on{
-    padding-left: 23px;
-    background: #0a0a0a;
-}
+
 </style>
 <head>
     <meta charset="UTF-8">
@@ -465,27 +150,25 @@ max-height: 450px;
     <meta name="viewport" content="width=Ddevice-width, initial-scale=1.0">
     <title>Socialavay</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <nav>
     <div class="nav-left">
-        <img src="images/social1.jpeg" class="logo">
+        <img src="/static/images/social1.jpeg" class="logo">
+        <div>
         <ul>
-            <li><img src="images/notification.png"></li>
-            <li><img src="images/inbox.png"> </li>
-            <!-- <li><button type="button" class="btn btn-primary">Message</button><li> -->
-              <a class="btn btn-primary" href="#" role="button">Message</a>
-            <li><img src="images/video.png"></li>
+            <li ><img src="/static/images/inbox.png"> </li>
+            <a href="/Chat"> Chat </a>
         </ul>
+        </div>
     </div>
     <div class="nav-right">
       <div class="search-box">
-          <img src="images/search.png">
+          <img src="/static/images/search.png">
           <input type="text" placeholder="Search">
       </div>
       <div class="nav-user-icon online" onclick="settingsMenuToggle()">
-          <img src="images/profile-pic.png">
+          <img src="/static/images/profile-pic.png">
       </div>
     </div>
 <!-----------settings-menu------- -->
@@ -497,38 +180,24 @@ max-height: 450px;
 
       <div class="settings-menu-inner">
         <div class="user-profile">
-          <img src="images/profile-pic.png">
+          <img src="/static/images/profile-pic.png">
           <div>
-              <p>Ayush Kaushik</p>
+              <p>{{msg}}</p>
               <a href="#">See your profile</a>
           </div>
         </div>
         <hr>
-        <div class="user-profile">
-          <img src="images/feedback.png">
-          <div>
-              <p>Give Feedback</p>
-              <a href="#">Help us to improve the new design</a>
-          </div>
-        </div>
-        <hr>
         <div class="settings-links">
-          <img src="images/setting.png" class="settings-icon">
-          <a href="#">Settings & Privacy <img src="images/arrow.png'
-          width="10px"></a>
+          <img src="/static/images/setting.png" class="settings-icon">
+          <a href="#">Settings & Privacy</a>
         </div>
         <div class="settings-links">
-          <img src="images/help.png" class="settings-icon">
+          <img src="/static/images/help.png" class="settings-icon">
           <a href="#">Help & Support <img src="images/arrow.png"
           width="10px"></a>
         </div>
         <div class="settings-links">
-          <img src="images/display.png" class="settings-icon">
-          ka href="#">Display & Accessibility <img src="images/arrow.png"
-          width="10px"></a>
-        </div>
-        <div class="settings-links">
-          <img src="images/logout.png" class="settings-icon">
+          <img src="/static/images/logout.png" class="settings-icon">
           <a href="#">Logout <img src="images/arrow.png" width="10px"></a>
         </div>
       </div>
@@ -540,247 +209,55 @@ max-height: 450px;
   <div class="container">
     <!---- left-sidebar-- -->
   <div class="left-sidebar">
-    <div class="imp-links">
-     <!--  <a href="#"><img src="images/news.png"> Latest News</a>
-      <a href="#"><img src="images/friends.png"> Friends</a>
-      <a href="#"><img src="images/group.png"> Group</a>
-      <a href="#"><img src="images/marketplace.png"> marketplace</a>
-      <a href="#"><img src="images/watch.png"> Watch</a>
-      <a href="#">See More</a> -->
-    </div>
     <div class="shortcut-links">
-       <!--  <p>Your Shortcuts</p>
-        <a href="#"><img src="images/shortcut-1.png"> Web Developers</a>
-        <a href="#"><img src="images/shortcut-2.png"> Web Design course</a>
-        <a href="#"><img src="images/shortcut-3.png"> Full Stack Development</a>
-        <a href="#"><img src="images/shortcut-4.png"> Website Experts</a> -->
     </div>
   </div>
    <!-------  main content--- -->
     <div class="main-content">
-      <div class="story-gallery">
 
-       <!--  <div class="story story2">
-          <img src="images/member-1.png">
-          <p>Ayush</p>
-        </div> -->
-       <!--  <div class="story story3">
-          <img src="images/member-2.png">
-          <p>Rishabh</p>
-        </div> -->
-        <!-- <div class="story story4">
-          <img src="images/member-3.png">
-         <!--  <p>Pavan</p> -->
-        <!-- </div>  -->
-        <!-- <div class="story story4"> -->
-         <!--  <img src="images/member-4.png"> -->
-          <!-- <p>wow</p> -->
-        <!-- </div> -->
-      </div>
     <div class="write-post-container">
       <div class="user-profile">
-          <img src="images/profile-pic.png">
+          <img src="/static/images/profile-pic.png">
           <div>
-              <p>Ayush Kaushik</p>
-              <small>Public <i class="fas fa-caret-down"></i></small>
+              <p>{{msg}}</p>
+              <small>Public <i class="fas fa-caret-down"></i></small><br><br>
           </div>
       </div>
       <div class="post-input-container">
-        <textarea rows="3" placeholder="What's on your mind, Ayush?"></textarea>
-        <form action="/action_page.php">
-        <input type="file" id="myFile" name="filename">
+          <form  action="/addpost" , method="Post" enctype="multipart/form-data">
+        <input name="msg" placeholder="What's on your mind,{{msg}}"><br><br>
+        <input type="file" name="image">
        <button type="submit" class="btn btn-primary">Post</button>
        </form>
-        <!-- <div class="add-post-links">
-            ka href="#"><img src="images/live-video.png"> Live Video</a>
-            ka href="#"><img src="images/photo.png"> Photo/Video</a>
-            ka href="#"><img src="images/feeling.png"> Feling/Activity</a>
-        </div> -->
       </div>
     </div>
-    <div class="post-container">
-      <div class="post-row">
-        <div class="user-profile">
-          <img src="images/profile-pic.png">
-          <div>
-              <p>Ayush Kaushik</p>
-              <span>April 15 2022, 13:40 pm</span>
-          </div>
-        </div>
-        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
-      </div>
-
-      <p class="post-text">Hello Everyone. </p>
-      <img src="images/feed-image-1.png" class="post-img">
-
-      <div class="post-row">
-        <div class="activity-icons">
-          <div><img src="images/like-blue.png"> 120</div>
-          <div><img src="images/comments.png"> 45</div>
-          <div><img src="images/share.png"> 20</div>
-        </div>
-        <div class="post-profile-icon">
-          <img src="images/profile-pic.png"><i class="fas fa-caret-down"></i>
-        </div>
-      </div>
+<div>
+        <h2>Feed</h2><br><br>
+        {% for data in itemData %}
+        <table>
+            <tr id="UserName">
+                {% for row in data %}
+                <td>
+                    {{row[1]}}
+                </td>
+                {% endfor %}
+            </tr>
+            <tr id="Postimg">
+                {% for row in data %}
+                <td>
+                    <img src={{ url_for('static', filename='uploads/' + row[2]) }} id="itemImage"/>
+                </td>
+                {% endfor %}
+            </tr>
+        </table>
+        {% endfor %}
     </div>
-    <div class="post-container">
-      <div class="post-row">
-        <div class="user-profile">
-          <img src="images/profile-pic.png">
-          <div>
-              <p>Ayush Kaushik</p>
-              <span>April 15 2022, 13:40 pm</span>
-          </div>
-        </div>
-        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
-      </div>
-
-      <p class="post-text">like <span>@Easy Tutorials</span> YouTube channel
-      to watch more videos on website development and UI designs. <a
-      href="#">#EasyTutorials</a> <a href="#" >#YouTubeChannel</a></p>
-      <img src="images/feed-image-2.png" class="post-img">
-
-      <div class="post-row">
-        <div class="activity-icons">
-          <div><img src="images/like.png"> 120</div>
-          <div><img src="images/comments.png"> 45</div>
-          <div><img src="images/share.png"> 20</div>
-        </div>
-        <div class="post-profile-icon">
-          <img src="images/profile-pic.png"><i class="fas fa-caret-down"></i>
-        </div>
-      </div>
-    </div>
-    <div class="post-container">
-      <div class="post-row">
-        <div class="user-profile">
-          <img src="images/profile-pic.png">
-          <div>
-              <p>Ayush Kaushik</p>
-              <span>April 15 2022, 13:40 pm</span>
-          </div>
-        </div>
-        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
-      </div>
-
-      <p class="post-text">like <span>@Easy Tutorials</span> YouTube channel
-      to watch more videos on website development and UI designs. <a
-      href="#">#EasyTutorials</a> <a href="#" >#YouTubeChannel</a></p>
-      <img src="images/feed-image-3.png" class="post-img">
-
-      <div class="post-row">
-        <div class="activity-icons">
-          <div><img src="images/like.png"> 120</div>
-          <div><img src="images/comments.png"> 45</div>
-          <div><img src="images/share.png"> 20</div>
-        </div>
-        <div class="post-profile-icon">
-          <img src="images/profile-pic.png"><i class="fas fa-caret-down"></i>
-        </div>
-      </div>
-    </div>
-    <div class="post-container">
-      <div class="post-row">
-        <div class="user-profile">
-          <img src="images/profile-pic.png">
-          <div>
-              <p>Ayush Kaushik</p>
-              <span>April 15 2022, 13:40 pm</span>
-          </div>
-        </div>
-        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
-      </div>
-
-      <p class="post-text">like <span>@Easy Tutorials</span> YouTube channel
-      to watch more videos on website development and UI designs. <a
-      href="#">#EasyTutorials</a> <a href="#" >#YouTubeChannel</a></p>
-      <img src="images/feed-image-4.png" class="post-img">
-
-      <div class="post-row">
-        <div class="activity-icons">
-          <div><img src="images/like.png"> 120</div>
-          <div><img src="images/comments.png"> 45</div>
-          <div><img src="images/share.png"> 20</div>
-        </div>
-        <div class="post-profile-icon">
-          <img src="images/profile-pic.png"><i class="fas fa-caret-down"></i>
-        </div>
-      </div>
-    </div><div class="post-container">
-      <div class="post-row">
-        <div class="user-profile">
-          <img src="images/profile-pic.png">
-          <div>
-              <p>Ayush Kaushik</p>
-              <span>April 15 2022, 13:40 pm</span>
-          </div>
-        </div>
-        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
-      </div>
-
-      <p class="post-text">like <span>@Easy Tutorials</span> YouTube channel
-      to watch more videos on website development and UI designs. <a
-      href="#">#EasyTutorials</a> <a href="#" >#YouTubeChannel</a></p>
-      <img src="images/feed-image-5.png" class="post-img">
-
-      <div class="post-row">
-        <div class="activity-icons">
-          <div><img src="images/like.png"> 120</div>
-          <div><img src="images/comments.png"> 45</div>
-          <div><img src="images/share.png"> 20</div>
-        </div>
-        <div class="post-profile-icon">
-          <img src="images/profile-pic.png"><i class="fas fa-caret-down"></i>
-        </div>
-      </div>
-    </div>
-
-
-    <button type="button" class="load-more-btn">Load More</button>
-
-
-    </div>
-    <!------  right-sidebar--- -->
-    <div class="right-sidebar">
-        <div class="sidebar-title">
-          <h4>Conversation</h4>
-        <a href="#">Hide Chat</a>
-      </div>
-      <div class="online-list">
-        <div class="online">
-          <img src="images/member-1.png">
-        </div>
-        <p>Rishabh Singh</p>
-      </div>
-      <div class="online-list">
-          <div class="online">
-            <img src="images/member-2.png">
-          </div>
-          <p>Pavan</p>
-      </div>
-      <div class="online-list">
-          <div class="online">
-              <img src="images/member-3.png">
-          </div>
-          <p>Rahul Yadav</p>
-      </div>
-    </div>
-        <div class="right-event">
-
-        </div>
-      </div>
-
-        <div class="right-event">
-
-      <img src="images/advertisement.png" class="sidebar-ads">
-      <div class="sidebar-title">
-
-
-  </div>
+</div>
 <div class="footer">
-    <p>Copyright 2022 Socialavay</p>
+  <p>Copyright 2022 Socialavey</p>
 </div>
 <script src="script.js"></script>
+  </div>
+  </div>
 </body>
 </html>
