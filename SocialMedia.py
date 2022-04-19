@@ -39,7 +39,7 @@ def verifyuser():
             sql = "select Username from SignUp where email=?"
             cur.execute(sql, (email,))
             s = cur.fetchone()[0]
-            return render_template("Foryou.html", msg=s)
+            return render_template("newforyou.html", msg=s)
         else:
             return "Can't Login"
     else:
@@ -94,15 +94,15 @@ def adddetails():
             return render_template("Welcome.html", msg=msg)
 
 
-@app.route('/Foryou')
+@app.route('/newforyou')
 def Foryou():
     loggedIn, Name = getLoginDetails()
     with sqlite3.connect('socialavey.db') as conn:
         cur = conn.cursor()
-        cur.execute('SELECT  Utime, msg, image FROM Posts')
+        cur.execute('SELECT  Utime,username, msg, image FROM NewPost')
         itemData = cur.fetchall()
     itemData = parse(itemData)
-    return render_template("Foryou.html",itemData=itemData, loggedIn=loggedIn, Name=Name)
+    return render_template("newforyou.html", itemData=itemData, loggedIn=loggedIn, Name=Name)
 
 
 def files_allowed(filename):
@@ -116,6 +116,15 @@ def addpost():
         message = request.form['msg']
         # Uploading image procedure
         image = request.files['image']
+
+        if 'email' in session:
+            email = session['email']
+            con = sqlite3.connect("socialavey.db")
+            cur = con.cursor()
+            sql = "select Username from SignUp where email=?"
+            cur.execute(sql, (email,))
+            r = cur.fetchall()
+            s = r[0][0]
         if image and files_allowed(image.filename):
             filename = secure_filename(image.filename)
             image.save(os.path.join(app.config['upload_img'], filename))
@@ -123,9 +132,7 @@ def addpost():
         with sqlite3.connect('socialavey.db') as conn:
             try:
                 cur = conn.cursor()
-                cur.execute(
-                    '''INSERT INTO Posts(msg, image) VALUES (?, ?)''',
-                    (message, imagename,))
+                cur.execute('''INSERT INTO NewPost(username, msg, image) VALUES (?,?,?)''', (s,message, imagename,))
                 conn.commit()
                 msg = "added successfully"
             except:
@@ -133,7 +140,7 @@ def addpost():
                 conn.rollback()
         conn.close()
         print(msg)
-        return redirect("/Foryou")
+        return redirect("/newforyou")
 
 
 def getLoginDetails():
@@ -163,6 +170,24 @@ def parse(data):
         ans.append(curr)
     return ans
 
+
+@app.route('/SessionLogout')
+def logout():
+    if 'email' in session:
+        session.pop('email', None)
+        return render_template('Welcome.html');
+    else:
+        return '<p>user already logged out</p>'
+
+@app.route('/searchpost',methods=["Post"])
+def search1():
+    username = request.form["search"]
+    con = sqlite3.connect("socialavey.db")
+    con.row_factory = sqlite3.Row
+    cur = con.cursor()
+    cur.execute("select * from NewPost where username=? ", (username,))
+    rows = cur.fetchall()
+    return render_template("view1.html", rows=rows)
 
 if __name__ == '__main__':
     app.run(debug=True)
