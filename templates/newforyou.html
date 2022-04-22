@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Content</title>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+:root{
+    --body-color: #efefef;
+    --nav-color: #ADD8E6;
+    --bg-color: #fff;
+}
+.dark-theme{
+    --body-color: #0a0a0a;
+    --nav-color: #000;
+    --bg-color: #000;
+}
+body{
+    background: var(--body-color);
+    transition: background 0.3s;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+    display: inline-block;
+    float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+.active {
+  background-color: #04AA6D;
+ }
+body {
+  background-image: url('https://wallpapercave.com/wp/wp3728849.jpg');
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--nav-color);
+    padding: 5px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.logo{
+    width: 150px;
+    margin-right: 40px;
+}
+.nav-left, .nav-right{
+    display: flex;
+    align-items: center;
+}
+.nav-left ul li{
+    list-style: none;
+   display: inline-block;
+}
+.nav-left ul li img{
+    width: 28px;
+   margin: 0 15px;
+}
+.nav-user-icon img{
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.nav-user-icon{
+    margin-left: 30px;
+}
+.search-box{
+    background: #efefef;
+    width: 450px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+.search-box img{
+    width: 18px;
+}
+.search-box input{
+    width: 100%;
+    background: transparent;
+    padding: 10px;
+    outline: none;
+    border: 0;
+}
+.container{
+    display: flex;
+     justify-content: space-between;
+    padding: 13px 5%;
+ }
+
+
+.write-post-container{
+    width:100%;
+    background: var(--bg-color);
+    border-radius: 6px;
+    padding: 20px;
+    color: #626262;
+}
+.user-profile{
+    display: flex;
+    align-items: center;
+}
+.user-profile img{
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.post-row a{
+    color: #9a9a9a;
+}
+.footer{
+    text-align: center;
+    color: #9a9a9a;
+    padding: 10px 0 20px;
+    font-size: 13px;
+}
+.settings-menu{
+    position: absolute;
+    width: 90%;
+    max-width: 350px;
+    background: var(--bg-color);
+    box-shadow: e 0 10px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    overflow: hidden;
+    top: 108%;
+    right: 5%;
+    max-height: 0;
+    transition: max-height 0.3s;
+}
+input{
+    display: inline;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+button{
+    margin-top: 0px;
+    width:20%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 200;
+    border-radius: 5px;
+    cursor: pointer;
+}
+h1{
+			color: Black;
+			font-family: 'Lucida Handwriting',sans-serif;
+			font-size: 100;
+			font-weight: 700;
+            line-height: 72px;
+            text-align: center;
+}
+.like-content {
+    display: inline-block;
+    width: 100%;
+    margin: 40px 0 0;
+    padding: 40px 0 0;
+    font-size: 18px;
+    border-top: 10px dashed #eee;
+    text-align: center;
+}
+.like-content span {
+	color: #9d9da4;
+	font-family: monospace;
+}
+.like-content .btn-secondary {
+	  display: block;
+	  margin: 40px auto 0px;
+    text-align: center;
+    background: #ed2553;
+    border-radius: 3px;
+    box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
+    padding: 10px 17px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+.like-content .btn-secondary:hover {
+	  transform: translateY(-3px);
+}
+.like-content .btn-secondary .fa {
+	  margin-right: 5px;
+}
+.animate-like {
+	animation-name: likeAnimation;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-duration: 0.65s;
+}
+@keyframes likeAnimation {
+  0%   { transform: scale(30); }
+  100% { transform: scale(1); }
+}
+img.img-c{
+    vertical-align:super;
+}
+
+</style>
+<script src={{url_for('static', filename='js/like.js') }}></script>
+<body style="background-color:Lavender;">
+<div align="center">
+<h1>Welcome to SocialAvey</h1>
+</div>
+<ul>
+<li><a href ="/Profile"> See Profile </a></li>
+<li style="float:right"><a href="/SessionLogout"> Logout </a></li>
+</ul>
+<nav>
+    <div class="nav-left">
+        <img src="/static/images/social1.jpeg" class="logo">
+        <div>
+        <ul>
+            <li ><img src="/static/images/inbox.png"> </li>
+            <a href="/Chat"> Chat </a>
+        </ul>
+        </div>
+    </div>
+    <div class="nav-right">
+      <div class="search-box">
+          <img src="/static/images/search.png">
+          <form action="/searchpost" , method="Post">
+            <input type="text" placeholder="Search" name="search">
+          </form>
+
+      </div>
+      <div class="nav-user-icon online" onclick="settingsMenuToggle()">
+          <img src="/static/images/profile-pic.png">
+      </div>
+    </div>
+</nav>
+<div class="main-content">
+
+    <div class="write-post-container">
+      <div class="user-profile">
+          <img src="/static/images/profile-pic.png">
+          <div>
+              <p>{{msg}}</p>
+              <small>Public <i class="fas fa-caret-down"></i></small><br><br>
+          </div>
+      </div>
+      <div class="post-input-container">
+          <form  action="/addpost" , method="Post" enctype="multipart/form-data">
+        <input name="msg" placeholder="What's on your mind,{{msg}}"><br><br>
+        <input type="file" name="image">
+        <button type="submit" class="btn btn-primary">Post</button>
+       </form>
+      </div>
+    </div>
+</div>
+<div class="print">
+    <h2>Feed</h2><br><br>
+    <li>
+        {% for data in itemData %}
+        <table>
+            <tr id="UserName">
+                {% for row in data %}
+                <td>
+                    {{row[1]}}<br>
+                    {{row[2]}}<br>
+                    {{row[0]}}
+                </td>
+                {% endfor %}
+            </tr>
+            <tr id="Postimg">
+                {% for row in data %}
+                <td>
+                    <img class="img-c" width="300" height="300" src={{url_for('static', filename='uploads/' + row[3]) }} id="itemImage"/> <br><br>
+<!--                    <div  align="center" id="respond">-->
+<!--                        <p>Leave a Comment</p>-->
+<!--                            <form action="/addcomment" method="post" id="commentform">-->
+<!--                                <input type="text" name="comment" >-->
+<!--                                <input name="submit" type="submit" value="Submit comment" />-->
+<!--                            </form>-->
+
+                        <div class="like-content">
+                            <span>
+                                show some love to the post
+                            </span>
+                            <button class="btn-secondary like-review">
+                            <i class="fa fa-heart" aria-hidden="true"></i> Like
+                        </button>
+                        </div>
+
+
+                    </div>
+                </td>
+                {% endfor %}
+            </tr>
+        </table><br><br>
+    {% endfor %}
+    </li>
+</div>
+<!--<div class="print">-->
+<!--    <h2>Comments</h2><br><br>-->
+<!--        {% for data in rows %}-->
+<!--        <table>-->
+<!--            <tr id="comm">-->
+<!--                {% for row in data %}-->
+<!--                <td>-->
+<!--                    {{row[0]}}<br>-->
+<!--                    {{row[1]}}<br>-->
+<!--                </td>-->
+<!--                {% endfor %}-->
+<!--            </tr>-->
+<!--        </table><br><br>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+<div class="footer">
+  <p>Copyright 2022 Socialavey</p>
+</div>
+<script src="script.js"></script>
+</div>
+</body>
+</html>
